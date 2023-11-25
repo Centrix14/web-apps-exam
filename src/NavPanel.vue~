@@ -1,0 +1,25 @@
+<template>
+<v-container fluid>
+  <v-app-bar class="pa-2" color="white" dark>
+    <v-text-field class="mt-5" label="Поиск" variant="outlined"></v-text-field>
+    <v-btn
+      class="mx-2"
+      icon="$plus"
+      variant="tonal"
+      color="blue"
+      @click="cb_add_btn"
+      ></v-btn>
+    <v-btn icon="mdi-magnify" variant="tonal" color="orange"></v-btn>
+  </v-app-bar>
+</v-container>
+</template>
+
+<script>
+export default {
+    methods: {
+        cb_add_btn() {
+            this.$emit("addBib", null)
+        }
+    }
+}
+</script>

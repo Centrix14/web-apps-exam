@@ -1,0 +1,40 @@
+<template>
+<p>{{ bibDataLocal }}</p>
+<div class="my-4 mx-2">
+  <v-row><v-text-field v-model="bibDataLocal.name" label="Имя" variant="outlined"></v-text-field></v-row>
+  <v-row><v-text-field v-model="bibDataLocal.author" label="Авторы" variant="outlined"></v-text-field></v-row>
+  <v-row><v-text-field v-model="bibDataLocal.source" label="Источник" variant="outlined"></v-text-field></v-row>
+  <v-row>
+    <v-text-field v-model="bibDataLocal.year" class="mr-10" label="Год" variant="outlined"></v-text-field>
+    <v-text-field v-model="bibDataLocal.tags" label="Тэги" variant="outlined"></v-text-field>
+  </v-row>
+</div>
+</template>
+<script>
+export default {
+    props: {
+        bibData: {
+            type: Object,
+            default: {
+                name: '',
+                author: '',
+                source: '',
+                year: 2023,
+                tags: '',
+            },
+        },
+    },
+    computed: {
+        bibDataLocal: {
+            get() {
+                return this.bibData
+            },
+            
+      set(value) {
+        this.$emit('update:bibData', value)
+      },
+    }
+  },
+
+}
+</script>

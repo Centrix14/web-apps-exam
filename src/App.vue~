@@ -1,0 +1,44 @@
+<template>
+<v-app>
+<v-container fluid>
+  <v-app-bar class="pa-2" color="white" dark>
+    <v-text-field class="mt-5" label="Поиск" variant="outlined"></v-text-field>
+    <v-btn
+      class="mx-2"
+      icon="$plus"
+      variant="tonal"
+      color="blue"
+      @click="addBttnClick"
+      ></v-btn>
+    <v-btn icon="mdi-magnify" variant="tonal" color="orange"></v-btn>
+  </v-app-bar>
+</v-container>
+
+<div class="pa-2">
+  <bibTable></bibTable>
+</div>
+
+<addDialog ref="addDialogRef" @new="bibAdded"></addDialog>
+</v-app>
+</template>
+
+<script>
+import bibTable from './BibTable.vue'
+import addDialog from './AddDialog.vue'
+
+export default {
+    methods: {
+        openAddDialog() {
+            this.$refs.addDialogRef.openDialog()
+        },
+        
+        bibAdded() {
+            
+        },
+    },
+    components: {
+        bibTable,
+        addDialog,
+    },
+}
+</script>

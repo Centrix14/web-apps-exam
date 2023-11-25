@@ -1,0 +1,26 @@
+<template>
+    <v-row>
+      <v-text-field label="Поиск" variant="outlined"></v-text-field>
+      <div class="pa-1">
+        <v-btn
+          class="mx-2"
+          icon="$plus"
+          variant="tonal"
+          color="blue"
+          @click="addBttnClick"
+        ></v-btn>
+        <v-btn icon="mdi-magnify" variant="tonal" color="orange"> </v-btn>
+      </div>
+      <div class="pa-1"></div>
+    </v-row>
+</template>
+
+<script>
+export default {
+    methods: {
+        addBttnClick() {
+            this.$emit('addBibEvent', null)
+        },
+    },
+}
+</script>
